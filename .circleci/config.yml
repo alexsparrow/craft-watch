@@ -81,7 +81,7 @@ commands:
 jobs:
   test_backend:
     docker:
-      - image: cimg/openjdk
+      - image: cimg/openjdk:13.0.2
     steps:
       - checkout
       - before_backend_job
@@ -97,7 +97,7 @@ jobs:
 
   run_backend:
     docker:
-      - image: cimg/openjdk
+      - image: cimg/openjdk:13.0.2
     steps:
       - checkout
       - before_backend_job
@@ -113,7 +113,7 @@ jobs:
 
   build_frontend:
     docker:
-      - image: cimg/node
+      - image: cimg/node:14.5.0
     steps:
       - checkout
       - restore_cache:
@@ -148,7 +148,7 @@ jobs:
 
   deploy:
     docker:
-      - image: cimg/base
+      - image: cimg/base:stable
     steps:
       - checkout
       - attach_workspace:
