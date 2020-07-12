@@ -81,7 +81,7 @@ commands:
 jobs:
   test_backend:
     docker:
-      - image: circleci/openjdk
+      - image: cimg/openjdk
     steps:
       - checkout
       - before_backend_job
@@ -97,7 +97,7 @@ jobs:
 
   run_backend:
     docker:
-      - image: circleci/openjdk
+      - image: cimg/openjdk
     steps:
       - checkout
       - before_backend_job
@@ -113,7 +113,7 @@ jobs:
 
   build_frontend:
     docker:
-      - image: circleci/node
+      - image: cimg/node
     steps:
       - checkout
       - restore_cache:
@@ -148,7 +148,7 @@ jobs:
 
   deploy:
     docker:
-      - image: circleci/node
+      - image: cimg/base
     steps:
       - checkout
       - attach_workspace:
